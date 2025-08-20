@@ -1,0 +1,87 @@
+2025-08-21 01:57:17,090 - INFO - ====== WebDriver manager ======
+2025-08-21 01:57:17,926 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 01:57:18,060 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 01:57:18,167 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-21 01:57:19,847 - INFO - WebDriver initialized successfully: chrome
+2025-08-21 01:57:35,878 - INFO - Clickable element found with selector: button[data-pdid='16'].add_to_cart
+2025-08-21 01:57:37,498 - ERROR - Failed to click element: Message: element click intercepted: Element <button data-pdid="16" class="customizable add_to_cart add_to_cart displaytool hvr-shrink">...</button> is not clickable at point (597, 20). Other element would receive the click: <div class="block block" data-id="58" data-name="">...</div>
+  (Session info: chrome=139.0.7258.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	GetHandleVerifier [0x0x72ffc3+65331]
+	GetHandleVerifier [0x0x730004+65396]
+	(No symbol) [0x0x523f63]
+	(No symbol) [0x0x572ce0]
+	(No symbol) [0x0x57109a]
+	(No symbol) [0x0x56ebf2]
+	(No symbol) [0x0x56dee1]
+	(No symbol) [0x0x562645]
+	(No symbol) [0x0x5914dc]
+	(No symbol) [0x0x5620d4]
+	(No symbol) [0x0x591754]
+	(No symbol) [0x0x5b2bcb]
+	(No symbol) [0x0x5912d6]
+	(No symbol) [0x0x560910]
+	(No symbol) [0x0x561784]
+	GetHandleVerifier [0x0x9738b3+2439203]
+	GetHandleVerifier [0x0x96eae2+2419282]
+	GetHandleVerifier [0x0x75712a+225434]
+	GetHandleVerifier [0x0x746e08+159096]
+	GetHandleVerifier [0x0x74dd5d+187597]
+	GetHandleVerifier [0x0x737ad8+96840]
+	GetHandleVerifier [0x0x737c62+97234]
+	GetHandleVerifier [0x0x72277a+9962]
+	BaseThreadInitThunk [0x0x76287ba9+25]
+	RtlInitializeExceptionChain [0x0x77a9bb9b+107]
+	RtlClearBits [0x0x77a9bb1f+191]
+
+2025-08-21 01:57:37,662 - INFO - Screenshot saved: reports/screenshots/TC05_final_state_1755716257.png
+2025-08-21 01:57:42,771 - INFO - ====== WebDriver manager ======
+2025-08-21 01:57:43,575 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 01:57:43,682 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 01:57:44,158 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-21 01:57:45,418 - INFO - WebDriver initialized successfully: chrome
+2025-08-21 01:59:20,489 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select', 'select', '.form-select', '.dropdown-toggle']
+2025-08-21 01:59:20,499 - INFO - Element found with selector: input.styles_qty_pd_input__dFgvy
+2025-08-21 01:59:21,054 - ERROR - Failed to input quantity: type object 'Keys' has no attribute 'CTRL'
+2025-08-21 01:59:21,280 - INFO - Screenshot saved: reports/screenshots/TC06_final_state_1755716361.png
+2025-08-21 01:59:26,385 - INFO - ====== WebDriver manager ======
+2025-08-21 01:59:27,174 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 01:59:27,289 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 01:59:27,380 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-21 01:59:28,589 - INFO - WebDriver initialized successfully: chrome
+2025-08-21 02:01:04,556 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select', 'select', '.form-select', '.dropdown-toggle']
+2025-08-21 02:01:04,565 - INFO - Element found with selector: input.styles_qty_pd_input__dFgvy
+2025-08-21 02:01:05,111 - ERROR - Failed to input quantity: type object 'Keys' has no attribute 'CTRL'
+2025-08-21 02:01:05,332 - INFO - Screenshot saved: reports/screenshots/TC07_final_state_1755716465.png
+2025-08-21 02:01:10,447 - INFO - ====== WebDriver manager ======
+2025-08-21 02:01:11,146 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 02:01:11,246 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 02:01:11,388 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-21 02:01:12,452 - INFO - WebDriver initialized successfully: chrome
+2025-08-21 02:02:47,326 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select', 'select', '.form-select', '.dropdown-toggle']
+2025-08-21 02:02:47,335 - INFO - Element found with selector: input.styles_qty_pd_input__dFgvy
+2025-08-21 02:02:47,879 - ERROR - Failed to input quantity: type object 'Keys' has no attribute 'CTRL'
+2025-08-21 02:02:48,106 - INFO - Screenshot saved: reports/screenshots/TC08_final_state_1755716567.png
+2025-08-21 02:02:53,210 - INFO - ====== WebDriver manager ======
+2025-08-21 02:02:53,968 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 02:02:54,065 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 02:02:54,180 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-21 02:02:55,265 - INFO - WebDriver initialized successfully: chrome
+2025-08-21 02:03:56,429 - WARNING - Element not found with any of the selectors: ['input.styles_qty_pd_input__dFgvy', '.qty_pd_box input.text-center', "input[type='text'].styles_qty_pd_input__dFgvy", "//input[@class='text-center styles_qty_pd_input__dFgvy']", ".styles_qty_pd__IF7fO input[type='text']"]
+2025-08-21 02:04:57,655 - WARNING - Element not found with any of the selectors: ['input.styles_qty_pd_input__dFgvy', '.qty_pd_box input.text-center', "input[type='text'].styles_qty_pd_input__dFgvy", "//input[@class='text-center styles_qty_pd_input__dFgvy']", ".styles_qty_pd__IF7fO input[type='text']"]
+2025-08-21 02:05:58,961 - WARNING - Element not found with any of the selectors: ['input.styles_qty_pd_input__dFgvy', '.qty_pd_box input.text-center', "input[type='text'].styles_qty_pd_input__dFgvy", "//input[@class='text-center styles_qty_pd_input__dFgvy']", ".styles_qty_pd__IF7fO input[type='text']"]
+2025-08-21 02:07:00,120 - WARNING - Element not found with any of the selectors: ['input.styles_qty_pd_input__dFgvy', '.qty_pd_box input.text-center', "input[type='text'].styles_qty_pd_input__dFgvy", "//input[@class='text-center styles_qty_pd_input__dFgvy']", ".styles_qty_pd__IF7fO input[type='text']"]
+2025-08-21 02:08:01,340 - WARNING - Element not found with any of the selectors: ['input.styles_qty_pd_input__dFgvy', '.qty_pd_box input.text-center', "input[type='text'].styles_qty_pd_input__dFgvy", "//input[@class='text-center styles_qty_pd_input__dFgvy']", ".styles_qty_pd__IF7fO input[type='text']"]
+2025-08-21 02:09:36,390 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select', 'select', '.form-select', '.dropdown-toggle']
+2025-08-21 02:09:36,400 - INFO - Element found with selector: input.styles_qty_pd_input__dFgvy
+2025-08-21 02:09:36,955 - ERROR - Failed to input quantity: type object 'Keys' has no attribute 'CTRL'
+2025-08-21 02:09:37,197 - INFO - Screenshot saved: reports/screenshots/TC09_final_state_1755716976.png
+2025-08-21 02:09:42,330 - INFO - ====== WebDriver manager ======
+2025-08-21 02:09:43,125 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 02:09:43,227 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-21 02:09:43,338 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-21 02:09:44,593 - INFO - WebDriver initialized successfully: chrome
+2025-08-21 02:11:19,672 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select', 'select', '.form-select', '.dropdown-toggle']
+2025-08-21 02:11:19,680 - INFO - Element found with selector: input.styles_qty_pd_input__dFgvy
+2025-08-21 02:11:20,223 - ERROR - Failed to input quantity: type object 'Keys' has no attribute 'CTRL'
+2025-08-21 02:11:20,447 - INFO - Screenshot saved: reports/screenshots/TC10_final_state_1755717080.png

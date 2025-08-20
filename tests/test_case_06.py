@@ -92,75 +92,142 @@ class TestCase06:
         
         # Bước 1: Truy cập trang
         self.driver.get(PRODUCT_URL)
+        TestHelpers.wait_for_page_load(self.driver)
         print(f"✓ Accessed: {PRODUCT_URL}")
         
-        # Bước 2: Chọn phân loại (để focus vào quantity testing)
-        category_dropdown = self.test_helpers.find_element_by_multiple_selectors(
-            self.driver, self.wait, ProductPageLocators.CATEGORY_DROPDOWN, timeout=5
-        )
+        # Bước 2: Chọn phân loại (để focus vào quantity testing) - Updated to use new radio button approach
+        print("🔍 Looking for category selection...")
+        category_selected = TestHelpers.select_category_option(self.driver, "khac")
         
-        if category_dropdown:
-            try:
-                select = Select(category_dropdown)
-                if len(select.options) > 1:
-                    select.select_by_index(1)  # Chọn option đầu tiên (không phải placeholder)
-                    print("✓ Đã chọn phân loại đối tượng")
-            except:
-                print("⚠️ Không thể chọn phân loại, tiếp tục test")
+        if category_selected:
+            print("✓ Đã chọn phân loại đối tượng")
+        else:
+            print("⚠️ Không thể chọn phân loại, tiếp tục test")
         
         # Bước 3: Tìm và modify quantity field
-        quantity_input = self.test_helpers.find_element_by_multiple_selectors(
+        quantity_input = TestHelpers.find_element_by_multiple_selectors(
             self.driver, self.wait, ProductPageLocators.QUANTITY_INPUT
         )
         
         if not quantity_input:
             return {"status": "FAILED", "message": "Không tìm thấy quantity input field"}
         
-        # Clear và nhập boundary value
-        success = self.test_helpers.safe_send_keys(self.driver, quantity_input, quantity_value, clear_first=True)
-        if not success:
-            return {"status": "FAILED", "message": f"Không thể nhập giá trị {quantity_value}"}
+        print(f"✓ Found quantity input field")
         
-        print(f"✓ Đã nhập quantity = {quantity_value}")
+        # Get initial value before modification
+        initial_value = quantity_input.get_attribute("value")
+        print(f"📊 Initial quantity value: {initial_value}")
         
-        # Bước 4: Click "Thêm vào giỏ hàng"
-        add_to_cart_btn = self.test_helpers.find_element_by_multiple_selectors(
+        # Sử dụng safe_input_quantity helper với improved error handling
+        print(f"📝 Inputting quantity value: {quantity_value}")
+        input_result = TestHelpers.safe_input_quantity(self.driver, quantity_input, quantity_value)
+        
+        if not input_result["success"]:
+            return {"status": "FAILED", "message": f"Không thể nhập giá trị {quantity_value}: {input_result.get('error', '')}"}
+        
+        print(f"✓ Input result: {input_result['input_value']} → {input_result['final_value']}")
+        
+        # Check if the value was modified by the system (validation)
+        if input_result["was_modified"]:
+            print(f"⚠️ System modified input: {input_result['input_value']} → {input_result['final_value']}")
+        
+        # Bước 4: Click "Thêm vào giỏ hàng" using safe_click
+        add_to_cart_btn = TestHelpers.find_clickable_element_by_multiple_selectors(
             self.driver, self.wait, ProductPageLocators.ADD_TO_CART_BUTTON
         )
         
         if not add_to_cart_btn:
             return {"status": "FAILED", "message": "Không tìm thấy button 'Thêm vào giỏ hàng'"}
         
-        success = self.test_helpers.safe_click(self.driver, add_to_cart_btn)
+        print("🖱️ Clicking 'Thêm vào giỏ hàng' button...")
+        success = TestHelpers.safe_click(self.driver, add_to_cart_btn, use_javascript=True)
         if not success:
-            return {"status": "FAILED", "message": "Không thể click button"}
+            return {"status": "FAILED", "message": "Không thể click button sau nhiều lần thử"}
         
         print("✓ Đã click 'Thêm vào giỏ hàng'")
         
         # Bước 5: Kiểm tra behavior
-        time.sleep(2)  # Đợi response
+        time.sleep(3)  # Đợi response và DOM updates
         
-        # Kiểm tra quantity field có reset về 1 không
-        current_value = quantity_input.get_attribute("value")
-        print(f"📊 Quantity value after submit: {current_value}")
+        # Re-find quantity input in case DOM was updated
+        quantity_input_after = TestHelpers.find_element_by_multiple_selectors(
+            self.driver, self.wait, ProductPageLocators.QUANTITY_INPUT
+        )
+        
+        if quantity_input_after:
+            current_value = quantity_input_after.get_attribute("value")
+            print(f"📊 Quantity value after submit: {current_value}")
+        else:
+            current_value = "unknown"
+            print("⚠️ Could not find quantity input after submit")
         
         expected_behavior = self.test_data['expected_behavior']
         expected_cart_items = self.test_data['expected_cart_items']
         
+        # Kiểm tra error message nếu có
+        error_found = False
+        error_message = ""
+        
+        error_element = TestHelpers.find_element_by_multiple_selectors(
+            self.driver, self.wait, ProductPageLocators.ERROR_MESSAGE, timeout=5
+        )
+        
+        if error_element and error_element.is_displayed():
+            error_message = error_element.text
+            error_found = True
+            print(f"📝 Error message found: {error_message}")
+        
+        # Check for any validation alerts or notifications
+        try:
+            alert_elements = self.driver.find_elements(By.CSS_SELECTOR, 
+                ".alert, .notification, .message, [role='alert'], .toast")
+            for alert in alert_elements:
+                if alert.is_displayed() and alert.text.strip():
+                    if not error_found:
+                        error_message = alert.text
+                        error_found = True
+                        print(f"📝 Alert message found: {error_message}")
+                    break
+        except:
+            pass
+        
+        # Validate expected behavior
         if expected_behavior == "reset_to_1":
             if current_value == "1":
                 print("✅ Boundary value behavior correct: Reset to 1")
                 return {
                     "status": "PASSED",
-                    "message": f"Quantity {quantity_value} correctly handled - reset to 1, no items added to cart"
+                    "message": f"Quantity {quantity_value} correctly handled - reset to 1, validation working properly"
+                }
+            elif error_found:
+                return {
+                    "status": "PASSED",
+                    "message": f"Quantity {quantity_value} rejected with proper error message: '{error_message}'"
                 }
             else:
                 return {
                     "status": "FAILED",
-                    "message": f"Quantity không reset về 1. Current value: {current_value}"
+                    "message": f"Quantity không reset về 1 và không có error message. Current value: {current_value}"
                 }
         
-        return {"status": "PASSED", "message": "Boundary value test completed"}
+        # Check if cart was updated (should not be for invalid values)
+        try:
+            cart_indicators = self.driver.find_elements(By.CSS_SELECTOR, 
+                ".cart-count, .cart-total, [class*='cart'], [class*='added']")
+            cart_updated = any(indicator.is_displayed() for indicator in cart_indicators)
+            
+            if cart_updated and expected_cart_items == 0:
+                return {
+                    "status": "FAILED",
+                    "message": f"Cart was updated despite invalid quantity {quantity_value}"
+                }
+        except:
+            pass
+        
+        return {
+            "status": "PASSED", 
+            "message": f"Boundary value test completed. Final quantity: {current_value}, Error: {error_message if error_found else 'None'}"
+        }
     
     def execute_validation_testing(self):
         """

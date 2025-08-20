@@ -74,7 +74,7 @@ class TestCase07:
         
         # Test với invalid negative partition (-1)
         print(f"\n🎯 Testing invalid_negative partition with value: -1")
-        return self.test_negative_quantity(-1)
+        return self.test_negative_boundary(-1)
     
     def test_negative_quantity(self, quantity_value):
         """
@@ -163,6 +163,104 @@ class TestCase07:
                 }
         
         return {"status": "PASSED", "message": "Negative quantity test completed"}
+    
+    def test_negative_boundary(self, quantity_value):
+        """
+        Test negative boundary value cho quantity
+        
+        Args:
+            quantity_value: Giá trị âm cần test
+            
+        Returns:
+            dict: Test result
+        """
+        print(f"\n🧪 Testing negative boundary value: {quantity_value}")
+        
+        # Bước 1: Truy cập trang
+        self.driver.get(PRODUCT_URL)
+        self.test_helpers.wait_for_page_load(self.driver)
+        print(f"✓ Accessed: {PRODUCT_URL}")
+        
+        # Bước 2: Chọn phân loại (để focus vào quantity testing)
+        category_dropdown = self.test_helpers.find_element_by_multiple_selectors(
+            self.driver, self.wait, ProductPageLocators.CATEGORY_DROPDOWN, timeout=5
+        )
+        
+        if category_dropdown:
+            try:
+                select = Select(category_dropdown)
+                if len(select.options) > 1:
+                    select.select_by_index(1)
+                    print("✓ Đã chọn phân loại đối tượng")
+            except:
+                print("⚠️ Không thể chọn phân loại, tiếp tục test")
+        
+        # Bước 3: Tìm quantity input field
+        quantity_input = self.test_helpers.find_element_by_multiple_selectors(
+            self.driver, self.wait, ProductPageLocators.QUANTITY_INPUT
+        )
+        
+        if not quantity_input:
+            return {"status": "FAILED", "message": "Không tìm thấy quantity input field"}
+        
+        # Sử dụng safe_input_quantity helper
+        input_result = self.test_helpers.safe_input_quantity(self.driver, quantity_input, quantity_value)
+        
+        if not input_result["success"]:
+            return {"status": "FAILED", "message": f"Không thể nhập giá trị {quantity_value}: {input_result.get('error', '')}"}
+        
+        print(f"✓ Input result: {input_result['input_value']} → {input_result['final_value']}")
+        
+        # Kiểm tra xem input có bị reject không
+        if input_result["was_modified"]:
+            print(f"🔒 Input was modified by validation: {input_result['input_value']} → {input_result['final_value']}")
+        
+        # Bước 4: Click "Thêm vào giỏ hàng"
+        add_to_cart_btn = self.test_helpers.find_clickable_element_by_multiple_selectors(
+            self.driver, self.wait, ProductPageLocators.ADD_TO_CART_BUTTON
+        )
+        
+        if not add_to_cart_btn:
+            return {"status": "FAILED", "message": "Không tìm thấy button 'Thêm vào giỏ hàng'"}
+        
+        success = self.test_helpers.safe_click(self.driver, add_to_cart_btn)
+        if not success:
+            return {"status": "FAILED", "message": "Không thể click button"}
+        
+        print("✓ Đã click 'Thêm vào giỏ hàng'")
+        
+        # Bước 5: Kiểm tra validation behavior
+        time.sleep(2)
+        
+        # Kiểm tra quantity field có reset về 1 không
+        current_value = quantity_input.get_attribute("value")
+        print(f"📊 Quantity value after submit: {current_value}")
+        
+        expected_behavior = self.test_data['expected_behavior']
+        
+        # Kiểm tra error message
+        error_element = self.test_helpers.find_element_by_multiple_selectors(
+            self.driver, self.wait, ProductPageLocators.ERROR_MESSAGE, timeout=5
+        )
+        
+        if error_element and error_element.is_displayed():
+            error_message = error_element.text
+            print(f"📝 Error message: {error_message}")
+        
+        if expected_behavior == "reset_to_1":
+            if current_value == "1":
+                print("✅ Negative boundary value correctly handled: Reset to 1")
+                return {
+                    "status": "PASSED",
+                    "message": f"Negative quantity {quantity_value} correctly rejected - reset to 1, no items added to cart"
+                }
+            else:
+                return {
+                    "status": "FAILED",
+                    "message": f"Negative quantity không được xử lý đúng. Current value: {current_value}"
+                }
+        
+        return {"status": "PASSED", "message": "Negative boundary value test completed"}
     
     def execute_error_guessing(self):
         """

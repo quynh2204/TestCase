@@ -1,0 +1,59 @@
+2025-08-20 23:28:25,115 - INFO - ====== WebDriver manager ======
+2025-08-20 23:28:26,159 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:28:26,301 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:28:26,408 - INFO - There is no [win64] chromedriver "139.0.7258.138" for browser google-chrome "139.0.7258" in cache
+2025-08-20 23:28:26,408 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:28:26,681 - INFO - WebDriver version 139.0.7258.138 selected
+2025-08-20 23:28:26,687 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/win32/chromedriver-win32.zip
+2025-08-20 23:28:26,687 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.138/win32/chromedriver-win32.zip
+2025-08-20 23:28:26,870 - INFO - Driver downloading response is 200
+2025-08-20 23:28:34,918 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:28:36,349 - INFO - Driver has been saved in cache [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138]
+2025-08-20 23:28:39,168 - INFO - WebDriver initialized successfully: chrome
+2025-08-20 23:30:12,068 - WARNING - Element not found with any of the selectors: ["//button[contains(text(), 'Thêm vào giỏ hàng')]", "//button[contains(text(), 'Add to cart')]", "//input[@value='Thêm vào giỏ hàng']", '.add-to-cart', '.btn-add-cart', '#add-to-cart-button', '.add-cart-btn']
+2025-08-20 23:30:12,288 - INFO - Screenshot saved: reports/screenshots/TC05_final_state_1755707412.png
+2025-08-20 23:30:17,491 - INFO - ====== WebDriver manager ======
+2025-08-20 23:30:18,315 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:30:18,441 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:30:18,538 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-20 23:30:19,853 - INFO - WebDriver initialized successfully: chrome
+2025-08-20 23:31:15,924 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select']
+2025-08-20 23:32:06,195 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:32:06,432 - INFO - Screenshot saved: reports/screenshots/TC06_final_state_1755707526.png
+2025-08-20 23:32:11,573 - INFO - ====== WebDriver manager ======
+2025-08-20 23:32:12,473 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:32:12,579 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:32:12,682 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-20 23:32:13,973 - INFO - WebDriver initialized successfully: chrome
+2025-08-20 23:33:07,976 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select']
+2025-08-20 23:33:58,098 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:33:58,357 - INFO - Screenshot saved: reports/screenshots/TC07_final_state_1755707638.png
+2025-08-20 23:34:03,601 - INFO - ====== WebDriver manager ======
+2025-08-20 23:34:04,541 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:34:04,655 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:34:04,775 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-20 23:34:06,124 - INFO - WebDriver initialized successfully: chrome
+2025-08-20 23:35:00,164 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select']
+2025-08-20 23:35:50,350 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:35:50,566 - INFO - Screenshot saved: reports/screenshots/TC08_final_state_1755707750.png
+2025-08-20 23:35:55,670 - INFO - ====== WebDriver manager ======
+2025-08-20 23:35:56,577 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:35:56,706 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:35:56,834 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-20 23:35:58,107 - INFO - WebDriver initialized successfully: chrome
+2025-08-20 23:36:49,269 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:37:40,525 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:38:31,759 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:39:22,948 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:40:14,177 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:41:07,831 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select']
+2025-08-20 23:41:58,003 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:41:58,244 - INFO - Screenshot saved: reports/screenshots/TC09_final_state_1755708118.png
+2025-08-20 23:42:03,379 - INFO - ====== WebDriver manager ======
+2025-08-20 23:42:04,281 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:42:04,390 - INFO - Get LATEST chromedriver version for google-chrome
+2025-08-20 23:42:04,500 - INFO - Driver [C:\Users\Windows\.wdm\drivers\chromedriver\win64\139.0.7258.138\chromedriver-win32/chromedriver.exe] found in cache
+2025-08-20 23:42:05,818 - INFO - WebDriver initialized successfully: chrome
+2025-08-20 23:42:59,670 - WARNING - Element not found with any of the selectors: ["select[name*='category']", "select[name*='classification']", '.category-select', '.classification-select', '#category-select']
+2025-08-20 23:43:49,783 - WARNING - Element not found with any of the selectors: ["input[name='quantity']", "input[id='quantity']", '.quantity-input', "input[type='number']", '.qty-input']
+2025-08-20 23:43:50,055 - INFO - Screenshot saved: reports/screenshots/TC10_final_state_1755708229.png

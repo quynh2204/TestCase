@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 E-Commerce Testing Report - 2025-08-21 04:35:41</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background-color: #f5f5f5;
+        }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 { margin: 0; font-size: 2.5em; }
+        .header p { margin: 10px 0 0 0; opacity: 0.9; }
+        
+        .metrics-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 30px; 
+        }
+        .metric-card { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center; 
+            border-left: 4px solid #007bff;
+        }
+        .metric-value { font-size: 2em; font-weight: bold; color: #333; }
+        .metric-label { color: #666; margin-top: 5px; }
+        
+        .section { margin: 30px 0; }
+        .section h2 { 
+            color: #333; 
+            border-bottom: 2px solid #007bff; 
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .section h2:before { content: '📊'; margin-right: 10px; }
+        
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        tr:hover { background-color: #e3f2fd; }
+        
+        .status { 
+            padding: 6px 12px; 
+            border-radius: 20px; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            font-size: 0.8em;
+        }
+        .passed { background: #d4edda; color: #155724; }
+        .failed { background: #f8d7da; color: #721c24; }
+        .error { background: #fff3cd; color: #856404; }
+        
+        .technique-badge { 
+            display: inline-block; 
+            background: #e3f2fd; 
+            color: #1976d2; 
+            padding: 4px 8px; 
+            border-radius: 12px; 
+            font-size: 0.8em; 
+            margin: 2px;
+        }
+        
+        .chart-container { 
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0;
+        }
+        
+        .footer { 
+            margin-top: 40px; 
+            padding-top: 20px; 
+            border-top: 1px solid #ddd; 
+            text-align: center; 
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            table { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 E-Commerce Product Testing Report</h1>
+            <p><strong>User:</strong> quynh2204 | <strong>Date:</strong> 2025-08-21 04:35:41</p>
+            <p><strong>Duration:</strong> 926.97 seconds</p>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">6</div>
+                <div class="metric-label">Total Tests</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #28a745;">0</div>
+                <div class="metric-label">Passed</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #dc3545;">5</div>
+                <div class="metric-label">Failed</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #ffc107;">1</div>
+                <div class="metric-label">Errors</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" style="color: #007bff;">0.0%</div>
+                <div class="metric-label">Pass Rate</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔧 Testing Techniques Used</h2>
+            <div class="chart-container">
+    <span class="technique-badge">Input Validation (1)</span> <span class="technique-badge">Decision Table (1)</span> <span class="technique-badge">Boundary Value Analysis (2)</span> <span class="technique-badge">Validation Testing (1)</span> <span class="technique-badge">Equivalence Partitioning (3)</span> <span class="technique-badge">Error Guessing (3)</span> <span class="technique-badge">Stress/Load Testing (1)</span> 
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⚡ Dynamic Testing Types</h2>
+            <div class="chart-container">
+    <span class="technique-badge">Input Validation (2)</span> <span class="technique-badge">Boundary Condition Testing (1)</span> <span class="technique-badge">Error Handling (2)</span> <span class="technique-badge">Stress/Load Testing (1)</span> 
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📋 Detailed Test Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test ID</th>
+                        <th>Description</th>
+                        <th>Input</th>
+                        <th>Expected Result</th>
+                        <th>Status</th>
+                        <th>Actual Result</th>
+                        <th>Techniques</th>
+                        <th>Dynamic Testing</th>
+                        <th>Execution Time (s)</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td><strong>TC05</strong></td>
+                        <td>Input Validation - Không chọn phân loại</td>
+                        <td><code>Không chọn phân loại đối tượng</code></td>
+                        <td>Hiển thị thông báo lỗi 'Vui lòng chọn một khóa học'</td>
+                        <td><span class="status warning">WARNING</span></td>
+                        <td>Không tìm thấy validation message - có thể validation bị thiếu hoặc xử lý ở client-side</td>
+                        <td><span class="technique-badge">Input Validation</span> <span class="technique-badge">Decision Table</span></td>
+                        <td><span class="technique-badge">Input Validation</span></td>
+                        <td>189.33</td>
+                        <td>2025-08-21 04:23:23</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TC06</strong></td>
+                        <td>Boundary Value Analysis - Số lượng = 0</td>
+                        <td><code>Số lượng = 0</code></td>
+                        <td>Không thêm khóa học vào giỏ hàng, số lượng reset về 1</td>
+                        <td><span class="status failed">FAILED</span></td>
+                        <td>Không thể nhập giá trị 0: type object 'Keys' has no attribute 'CTRL'</td>
+                        <td><span class="technique-badge">Boundary Value Analysis</span> <span class="technique-badge">Validation Testing</span></td>
+                        <td><span class="technique-badge">Boundary Condition Testing</span></td>
+                        <td>14.77</td>
+                        <td>2025-08-21 04:23:38</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TC07</strong></td>
+                        <td>Error Handling - Số lượng = -1</td>
+                        <td><code>Số lượng = -1</code></td>
+                        <td>Không cho phép nhập số âm, số lượng reset về 1</td>
+                        <td><span class="status failed">FAILED</span></td>
+                        <td>Không thể nhập giá trị -1: type object 'Keys' has no attribute 'CTRL'</td>
+                        <td><span class="technique-badge">Equivalence Partitioning</span> <span class="technique-badge">Error Guessing</span></td>
+                        <td><span class="technique-badge">Error Handling</span></td>
+                        <td>104.68</td>
+                        <td>2025-08-21 04:25:22</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TC08</strong></td>
+                        <td>Input Validation - Nhập chữ 'e'</td>
+                        <td><code>Số lượng = 'e'</code></td>
+                        <td>Hiển thị lỗi 'Hãy nhập số hợp lệ', không thêm sản phẩm vào giỏ hàng</td>
+                        <td><span class="status failed">FAILED</span></td>
+                        <td>Không thể test input với giá trị 'e': type object 'Keys' has no attribute 'CTRL'</td>
+                        <td><span class="technique-badge">Equivalence Partitioning</span> <span class="technique-badge">Error Guessing</span></td>
+                        <td><span class="technique-badge">Input Validation</span></td>
+                        <td>104.71</td>
+                        <td>2025-08-21 04:27:07</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TC09</strong></td>
+                        <td>Stress Testing - Số lượng = 999999</td>
+                        <td><code>Số lượng = 999999</code></td>
+                        <td>Hiển thị thông báo 'Số lượng không hợp lệ', không thêm khóa học</td>
+                        <td><span class="status failed">FAILED</span></td>
+                        <td>Không thể nhập giá trị 999999: type object 'Keys' has no attribute 'CTRL'</td>
+                        <td><span class="technique-badge">Boundary Value Analysis</span> <span class="technique-badge">Stress/Load Testing</span></td>
+                        <td><span class="technique-badge">Stress/Load Testing</span></td>
+                        <td>409.32</td>
+                        <td>2025-08-21 04:33:56</td>
+                    </tr>
+        
+                    <tr>
+                        <td><strong>TC10</strong></td>
+                        <td>Error Handling - Ký tự đặc biệt '!@#'</td>
+                        <td><code>Số lượng = !@#</code></td>
+                        <td>Hiển thị lỗi 'Hãy nhập số hợp lệ', không thêm sản phẩm vào giỏ hàng</td>
+                        <td><span class="status failed">FAILED</span></td>
+                        <td>Không thể test input với giá trị '!@#': type object 'Keys' has no attribute 'CTRL'</td>
+                        <td><span class="technique-badge">Equivalence Partitioning</span> <span class="technique-badge">Error Guessing</span></td>
+                        <td><span class="technique-badge">Error Handling</span></td>
+                        <td>104.14</td>
+                        <td>2025-08-21 04:35:41</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>🔍 Test Environment Details</h2>
+            <div class="chart-container">
+                <p><strong>Framework:</strong> Selenium WebDriver</p>
+                <p><strong>Python Version:</strong> 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]</p>
+                <p><strong>Platform:</strong> nt</p>
+                <p><strong>Test URL:</strong> https://atd.ueh.edu.vn/business-analyst-in-practices-p16.html</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by QAQC Automation Framework | quynh2204 | 2025-08-21 04:35:41</p>
+            <p>🔧 Powered by Selenium WebDriver | 📊 Dynamic Testing Techniques Applied</p>
+        </div>
+    </div>
+</body>
+</html>
+    

@@ -1,0 +1,104 @@
+{
+  "test_suite": "E-Commerce Product Testing - Complete Suite",
+  "user": "quynh2204",
+  "execution_date": "2025-08-21 04:35:41",
+  "suite_duration": 926.97,
+  "summary": {
+    "total": 6,
+    "passed": 0,
+    "failed": 5,
+    "errors": 1,
+    "pass_rate": 0.0
+  },
+  "test_results": [
+    {
+      "status": "WARNING",
+      "message": "Không tìm thấy validation message - có thể validation bị thiếu hoặc xử lý ở client-side",
+      "test_id": "TC05",
+      "description": "Input Validation - Không chọn phân loại",
+      "techniques": "Input Validation, Decision Table",
+      "dynamic_testing": "Input Validation",
+      "input": "Không chọn phân loại đối tượng",
+      "expected": "Hiển thị thông báo lỗi 'Vui lòng chọn một khóa học'",
+      "execution_time": 189.33,
+      "timestamp": "2025-08-21 04:23:23"
+    },
+    {
+      "status": "FAILED",
+      "message": "Không thể nhập giá trị 0: type object 'Keys' has no attribute 'CTRL'",
+      "test_id": "TC06",
+      "description": "Boundary Value Analysis - Số lượng = 0",
+      "techniques": "Boundary Value Analysis, Validation Testing",
+      "dynamic_testing": "Boundary Condition Testing",
+      "input": "Số lượng = 0",
+      "expected": "Không thêm khóa học vào giỏ hàng, số lượng reset về 1",
+      "execution_time": 14.77,
+      "timestamp": "2025-08-21 04:23:38"
+    },
+    {
+      "status": "FAILED",
+      "message": "Không thể nhập giá trị -1: type object 'Keys' has no attribute 'CTRL'",
+      "test_id": "TC07",
+      "description": "Error Handling - Số lượng = -1",
+      "techniques": "Equivalence Partitioning, Error Guessing",
+      "dynamic_testing": "Error Handling",
+      "input": "Số lượng = -1",
+      "expected": "Không cho phép nhập số âm, số lượng reset về 1",
+      "execution_time": 104.68,
+      "timestamp": "2025-08-21 04:25:22"
+    },
+    {
+      "status": "FAILED",
+      "message": "Không thể test input với giá trị 'e': type object 'Keys' has no attribute 'CTRL'",
+      "test_id": "TC08",
+      "description": "Input Validation - Nhập chữ 'e'",
+      "techniques": "Equivalence Partitioning, Error Guessing",
+      "dynamic_testing": "Input Validation",
+      "input": "Số lượng = 'e'",
+      "expected": "Hiển thị lỗi 'Hãy nhập số hợp lệ', không thêm sản phẩm vào giỏ hàng",
+      "execution_time": 104.71,
+      "timestamp": "2025-08-21 04:27:07"
+    },
+    {
+      "status": "FAILED",
+      "message": "Không thể nhập giá trị 999999: type object 'Keys' has no attribute 'CTRL'",
+      "test_id": "TC09",
+      "description": "Stress Testing - Số lượng = 999999",
+      "techniques": "Boundary Value Analysis, Stress/Load Testing",
+      "dynamic_testing": "Stress/Load Testing",
+      "input": "Số lượng = 999999",
+      "expected": "Hiển thị thông báo 'Số lượng không hợp lệ', không thêm khóa học",
+      "execution_time": 409.32,
+      "timestamp": "2025-08-21 04:33:56"
+    },
+    {
+      "status": "FAILED",
+      "message": "Không thể test input với giá trị '!@#': type object 'Keys' has no attribute 'CTRL'",
+      "test_id": "TC10",
+      "description": "Error Handling - Ký tự đặc biệt '!@#'",
+      "techniques": "Equivalence Partitioning, Error Guessing",
+      "dynamic_testing": "Error Handling",
+      "input": "Số lượng = !@#",
+      "expected": "Hiển thị lỗi 'Hãy nhập số hợp lệ', không thêm sản phẩm vào giỏ hàng",
+      "execution_time": 104.14,
+      "timestamp": "2025-08-21 04:35:41"
+    }
+  ],
+  "metadata": {
+    "framework": "Selenium WebDriver",
+    "python_version": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "nt",
+    "techniques_used": [
+      "Boundary Value Analysis, Stress/Load Testing",
+      "Input Validation, Decision Table",
+      "Equivalence Partitioning, Error Guessing",
+      "Boundary Value Analysis, Validation Testing"
+    ],
+    "dynamic_testing_types": [
+      "Error Handling",
+      "Input Validation",
+      "Stress/Load Testing",
+      "Boundary Condition Testing"
+    ]
+  }
+}
